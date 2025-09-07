@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('correo_Empresarial', 100)->nullable();
             $table->string('imagen_Usuario', 100)->nullable();
             $table->boolean('activo',)->default(true);
-            $table->unsignedBigInteger('id_Rol', 100);
+            $table->unsignedBigInteger('id_Rol');
 
             //Llave foranea
             $table->foreign('id_Rol')->references('id')->on('roles');

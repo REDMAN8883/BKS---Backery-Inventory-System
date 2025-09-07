@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('subcategorias', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre_Subcategoria', 100);
+            $table->string('descripcion', 100)->nullable();
+            $table->boolean('activo',)->default(true);
+            $table->unsignedBigInteger('id_Categorias');
+
+            //Llave foranea
+            $table->foreign('id_Categorias')->references('id')->on('categorias');
         });
     }
 
