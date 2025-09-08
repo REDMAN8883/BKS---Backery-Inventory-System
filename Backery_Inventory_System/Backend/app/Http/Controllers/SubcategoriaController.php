@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subcategoria;
 use Illuminate\Http\Request;
 
-class SubcategoriaController
+class SubcategoriaController extends Controller
 {
     //Mostrar subcategorias
     public function index()
@@ -18,7 +18,7 @@ class SubcategoriaController
     public function store(Request $request)
     {
         // validacion de campos
-        $request->validates([
+        $request->validate([
             'nombre_Subcategoria' => 'required|string|max:100',
             'descripcion' => 'nullable|string|max:100',
             'activo' => 'nullable|boolean'
@@ -70,7 +70,7 @@ class SubcategoriaController
         }
 
         $subcategorias->activo = 0;
-        $subcategorias-save();
+        $subcategorias->save();
 
         return response()->json(['message' => 'Subcategoria eliminada correctamente']);
     }

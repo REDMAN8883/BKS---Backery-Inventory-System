@@ -10,13 +10,8 @@ class Subcategoria extends Model
     use HasFactory;
 
     protected $table = 'subcategorias';
-
-    protected $fillable = [
-        'nombre_Subcategoria',
-        'descripcion',
-        'activo',
-        'id_Categorias',
-    ];
+    protected $fillable = ['nombre_Subcategoria','descripcion','activo','id_Categorias'];
+    public $timestamps = false;
 
     public function categoria()
     {

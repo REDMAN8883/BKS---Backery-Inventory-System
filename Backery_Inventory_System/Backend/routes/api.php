@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\RolController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\MovimientoController;
+use App\Http\Controllers\TestController;
+
+Route::get('test', [TestController::class, 'index']);
+
 
 // Ruta de Usuarios
 Route::apiResource('usuarios', UsuarioController::class);
@@ -18,7 +22,7 @@ Route::apiResource('categorias', CategoriaController::class);
 Route::apiResource('subcategorias', SubcategoriaController::class);
 
 // Ruta de Productos
-Route::apiResource('productos', ProductosController::class);
+Route::apiResource('productos', ProductoController::class);
 
 // Ruta de Recetas
 Route::apiResource('recetas', RecetaController::class);

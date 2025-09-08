@@ -6,7 +6,7 @@ use App\Models\Movimiento;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
-class MovimientoController
+class MovimientoController extends Controller
 {
     //Mostrar movimientos 
     public function index()

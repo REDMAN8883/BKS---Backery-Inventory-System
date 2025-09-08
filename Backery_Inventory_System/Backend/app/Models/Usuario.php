@@ -9,8 +9,7 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    protected $table = 'usuarios'; // Nombre de la tabla
-
+    protected $table = 'usuarios';
     protected $fillable = [
         'nombres',
         'apellidos',
@@ -22,8 +21,10 @@ class Usuario extends Model
         'activo',
         'id_Rol',
     ];
+    public $timestamps = false;
 
-    public function rol(){
+    public function rol()
+    {
         return $this->belongsTo(Rol::class, 'id_Rol');
     }
     

@@ -9,8 +9,7 @@ class Producto extends Model
 {
     use HasFactory;
 
-    protected $table = 'productos'; // Este es el nombre de la tabla
-
+    protected $table = 'productos';
     protected $fillable = [
         'imagen_Producto',
         'nombre_Producto',
@@ -25,10 +24,10 @@ class Producto extends Model
         'activo',
         'id_SubCategorias',
     ];
+    public $timestamps = false;
 
-    // Relacion: Un producto tiene muchas recetas
-
-    public function recetas(){
+    public function recetas()
+    {
         return $this->hasMany(Receta::class, 'id_Productos');
     }
 

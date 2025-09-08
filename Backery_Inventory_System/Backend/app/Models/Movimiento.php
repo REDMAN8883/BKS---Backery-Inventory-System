@@ -10,7 +10,6 @@ class Movimiento extends Model
     use HasFactory;
 
     protected $table = 'movimientos';
-
     protected $fillable = [
         'tipo',
         'cantidad',
@@ -20,13 +19,15 @@ class Movimiento extends Model
         'id_Productos',
         'id_Usuarios',
     ];
+    public $timestamps = false;
 
     public function producto()
     {
         return $this->belongsTo(Producto::class, 'id_Productos');
     }
 
-    public function usuario(){
+    public function usuario()
+    {
         return $this->belongsTo(Usuario::class, 'id_Usuarios');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class CategoriaController
+class CategoriaController extends Controller
 {
     // Listar categorias
     public function index()
@@ -18,7 +18,7 @@ class CategoriaController
     public function store(Request $request)
     {
         // Validacion de los campos
-        $request->validates([
+        $request->validate([
             'nombre_Producto' => 'required|string|max:50',
             'descripcion' => 'nullable|string|max:100',
             'activo' => 'nullable|boolean',

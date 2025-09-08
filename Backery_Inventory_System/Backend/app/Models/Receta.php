@@ -9,24 +9,24 @@ class Receta extends Model
 {
     use HasFactory;
 
-    protected $table = 'recetas'; // Nombre de la tabla 
-
-    protected $fillable =[
+    protected $table = 'recetas';
+    protected $fillable = [
         'imagen_Receta',
         'nombre_Receta',
         'descripcion',
         'dificultad',
         'porciones',
-        'notas_Adicionales', 
+        'notas_Adicionales',
         'ingredientes',
         'pasos_Preparacion',
         'tiempo_Preparacion',
         'activo',
         'id_Productos',
     ];
+    public $timestamps = false;
 
-    // Relacion: Una receta tiene muchos productos
-    public function producto() {
+    public function producto()
+    {
         return $this->belongsTo(Producto::class, 'id_Productos');
     }
 }
