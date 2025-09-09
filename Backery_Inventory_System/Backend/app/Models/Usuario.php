@@ -16,6 +16,7 @@ class Usuario extends Model
         'tipo_Documento',
         'numero_Documento',
         'numero_Celular',
+        'contrasena',
         'correo_Empresarial',
         'imagen_Usuario',
         'activo',
