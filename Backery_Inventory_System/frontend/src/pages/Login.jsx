@@ -2,7 +2,7 @@ import { useState } from "react"
 // import { useNavigate } from "react-router-dom";
 
 // Css
-import './css/Login.css'
+import '../css/Login.css';
 
 // Pages o components necesarios
 import { useAuth } from "../context/useAuth";
@@ -87,6 +87,12 @@ export default function Login() {
     return (
         <>
             <div className="login-page">
+                <div className="bg-shapes">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                </div>
 
                 {/* Notificacion */}
                 <ToastNotification 
@@ -96,12 +102,12 @@ export default function Login() {
                     onClose={hideToast}
                 />
 
-                <div className="container-fluid d-flex justify-content-center align-items vh-100">
+                <div className="container-fluid">
+                        <h1 className="title text-center mb-3">Inicio de sesión</h1>
                     <div className="form-container">
                         <div className="login-icon">
                             <i className="bi bi-person-fill"></i>
                         </div>
-                        <h1 className="text-center mb-3">Iniciar sesión</h1>
                         <p className="text-muted text-center mb-4">Bienvenido a BKS</p>
 
                         <form onSubmit={handelSubmit}>
