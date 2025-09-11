@@ -1,5 +1,5 @@
 import { useState } from "react"
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Css
 import '../css/Login.css';
@@ -23,7 +23,7 @@ export default function Login() {
     // auth
     const { login } = useAuth();
     //Navegador de paginas
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
  
     // Estado de la alerta del inicio de sesion
     const [toast, setToast] = useState({
@@ -53,8 +53,8 @@ export default function Login() {
         setLoanding(true);
 
         try {
-            const res = await axios.post("", {
-                correo: email,
+            const res = await axios.post("http://127.0.0.1:8000/api/login", {
+                correo_Empresarial: email,
                 contrasena: password,
             });
 
@@ -66,15 +66,17 @@ export default function Login() {
 
             showToast("Inicio de sesión exitoso", "success");
 
-            // const userRole = usuario.rol?.toLowerCase().trim();
+            const userRole = usuario.rol?.toLowerCase().trim();
 
-            // setTimeout(() => {
-            //     if (userRole && ["Admin", "cliente"].includes(userRole)){
-            //         navigate(`/${routeRole}`); // Hacer ruta y controlador del rol
-            //     } else {
-            //         showToast(`Rol de usuario no valido: "${userRole}"`, "error");
-            //     }
-            // }, 1000);
+            setTimeout(() => {
+                if(userRole === "admin"){
+                    navigate("/admin");
+                } else if (userRole === "cliente"){
+                    navigate("/cliente");
+                } else {
+                    showToast(`Rol de usuario no válido: "${userRole}"`, "error");
+                }
+            }, 1000);
         } catch (err){
             console.error(err);
             showToast(err.response?.data?.mensaje || "Error en el servidor", "error");

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -30,8 +31,12 @@ class UsuarioController extends Controller
             'activo' => 'nullable|boolean',
             'id_Rol' => 'nullable|integer|exists:roles,id',
         ]);
+        $data = $request->all();
+
+        //Encriptamos la contraseña
+        $data['contrasena'] = Hash::make($request->contrasena);
         // Creamos al usuario nuevo
-        $usuarios = Usuario::create($request->all());
+        $usuarios = Usuario::create($data);
 
         return response()->json([
             'message' => 'Usuario creado con éxito',
@@ -59,7 +64,11 @@ class UsuarioController extends Controller
             return response()->json(['message' => 'Usuario no encontrado'], 404);
         }
 
-        $usuarios->update($request->all());
+        $data = $request->all();
+        //Encriptamos la contraseña
+        $data['contrasena'] = Hash::make($request->contrasena);
+
+        $usuarios = Usuario::create($data);
 
         return response()->json([
             'message' => 'Usuario actualizado correctamente',
