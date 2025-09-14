@@ -20,8 +20,10 @@ export default function Login() {
     const [showPass, setShowPass] = useState(false);
     // Carga de los campos
     const [loading, setLoanding] = useState(false);
+    
     // auth
     const { login } = useAuth();
+    
     //Navegador de paginas
     const navigate = useNavigate();
  
@@ -85,6 +87,8 @@ export default function Login() {
         }
     };
 
+    // Debug: Verificar si el componente se está renderizando
+    console.log("Login component rendering");
 
     return (
         <>
@@ -157,8 +161,4 @@ export default function Login() {
             </div>
         </>
     )
-
-
-
-
 }

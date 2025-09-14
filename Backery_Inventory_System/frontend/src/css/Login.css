@@ -2,13 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    justify-content: center;
 }
-
+html, body, #root {
+  height: 100%;
+}
 body {
-    height: 100%;
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
+}
+.login-page{
+    width: 100vw;        /* fuerza a ocupar todo el ancho del viewport */
+    min-height: 100vh;   /* mínimo la altura de la pantalla */
+    display: flex;
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* centra verticalmente */
+    position: relative;
+    overflow: hidden;         
+}
+.login-page .login-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;   /* centrado por si acaso */
+    position: relative;
+    z-index: 1;
 }
 
 /* Fondo de login */
@@ -35,6 +51,7 @@ body {
     width: 100%;
     position: relative;
     z-index: 1;
+    
 }
 
 /* Titulo del inicio de sesion */
@@ -57,7 +74,6 @@ body {
     border: 1px black solid;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.99);
     width: 100%;
-    height: auto;
     max-width: 500px;
     color: white;
 }
