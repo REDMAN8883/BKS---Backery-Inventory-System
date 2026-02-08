@@ -51,14 +51,21 @@ class AuthController extends Controller
             Log::info('Resultado búsqueda:', ['encontrado' => $usuario ? 'Si' : 'No']);
 
             if (!$usuario) {
-                return response()->json(['mensaje' => 'Usuario no encontrado'], 401);
+                return response()->json(['mensaje' => 'Usuario no encontrado.'], 401);
             }
 
             // Verificar contraseña
             Log::info('Verificando contraseña');
             
             if (!Hash::check($contrasena, $usuario->contrasena)) {
-                return response()->json(['mensaje' => 'Contraseña incorrecta'], 401);
+                return response()->json(['mensaje' => 'Contraseña incorrecta.'], 401);
+            }
+
+            // Verificaion del correo
+            if (is_null($usuario->correo_Verificado)){
+                return response()->json([
+                    'mensaje' => 'Debes verificar tu correo antes de iniciar sesión.'
+                ], 403);
             }
 
             // Crear token JWT

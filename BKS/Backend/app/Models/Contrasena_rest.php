@@ -5,24 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model 
+class Contrasena_rest extends Model 
 {
     use HasFactory;
 
-    protected $table = 'usuarios';
+    protected $table = 'Contrasena_reset';
     protected $fillable = [
-        'nombres',
-        'apellidos',
-        'tipo_Documento',
-        'numero_Documento',
-        'numero_Celular',
-        'contrasena',
-        'correo_Empresarial',
-        'correo_Personal',
-        'imagen_Usuario',
-        'correo_Verificado',
-        'activo',
-        'id_Rol',
+        'usuario_id',
+        'codigo',
+        'expiracion',
+        'usado',
+        'creado',
+        'proposito'
     ];
     public $timestamps = false;
 
