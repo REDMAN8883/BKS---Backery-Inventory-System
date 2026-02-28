@@ -77,7 +77,7 @@ export default function R_Contraseña1(){
 
                         <div className="Bloque_dos">
                             <form onSubmit={handelSubmit} className="FormularioRegistro1">
-                                <h4 className="TituloFormulario1">Escribe el correo que registraste para enviarte un codigo de verficación</h4>
+                                <h4 className="TituloFormulario1">Escribe el correo que registraste para enviarte un codigo de verficación.</h4>
 
                                 <input type="email" className="form-control-custom" value={correo} onChange={(e) => setCorreo(e.target.value)} placeholder="Correo electronico" required/>
 

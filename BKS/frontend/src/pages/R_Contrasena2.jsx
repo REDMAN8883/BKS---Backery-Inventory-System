@@ -50,7 +50,7 @@ export default function R_Contraseña1(){
 
                         <div className="Bloque_dos">
                             <form className="FormularioRegistro">
-                                <h4 className="TituloFormulario">Te hemos enviado un codigo de verficacion a correo/numero</h4>
+                                <h4 className="TituloFormulario">Te hemos enviado un codigo de verficacion a correo registrado</h4>
 
                                 <input type="text" className="form-control-custom" placeholder="Codigo de verificación" required/>
 

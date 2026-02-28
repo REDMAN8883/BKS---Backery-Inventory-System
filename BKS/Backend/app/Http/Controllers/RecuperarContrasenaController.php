@@ -5,15 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
+// Importaciones para el MAIL
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CodigoRecuperacionMail;
 
 class RecuperarContrasenaController extends Controller
 {
     public function RecuperarContrasena(Request $request)
     {
-        $correo = $request->input('correo');
-        $usuario = Usuario::where('correo_Empresarial', $correo)
-            ->orWhere('correo_Personal', $correo)
+        // Validar correo del usuario.
+        $request->validate([
+            'correo' => 'required|email'
+        ]);
+        
+        // Busca el correo del usuario.
+        $usuario = Usuario::where('correo_Empresarial', $request->correo)
+            ->orWhere('correo_Personal', $request->correo)
             ->first();
+        // Genera el correo aleatoreamente.
         $codigo = random_int(100000, 999999);
 
         if ($usuario){
@@ -27,10 +38,28 @@ class RecuperarContrasenaController extends Controller
             ]);
         }
 
+        Log::info($usuario->correoDestino);
+
+        // SMTP
+
+        if($usuario->correo_Empresarial){
+            $correoDestino = $usuario->correo_Empresarial;
+        } else if ($usuario->correo_Personal) {
+            $correoDestino = $usuario->correo_Personal;
+        } else {
+            return response()->json([
+                'error' => 'El usuario no tiene ningun correo registrado'
+            ]);
+        }
+
+        MAIL::to($correoDestino)
+            ->send(new CodigoRecuperacionMail($codigo));
+
+        // Mensaje de seguridad.
         return response()->json([
             'message' => 'Si el correo existe se enviara un codigo'
         ]);
-
+        // Mensaje por si el usuario no existe.
         if(!$usuario){
             return response()->json([
                 'message'=>'usuario no encontrado'

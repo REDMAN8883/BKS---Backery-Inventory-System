@@ -68,13 +68,13 @@ export default function Registro(){
         // Validamos si los campos estan vacios o no
         if (!nombres || !apellidos || !numero_Celular || !correo_Personal || !correo_PersonalConfirmacion || !contrasena || !contrasenaConfirmacion){
             Swal.fire('Campos requeridos', 'Completa todos los campos', 'warning');
-            setIsSubmitting(false);
+            // setIsSubmitting(false);
             return;
         }
         // Confirmacion de correo
         if (correo_Personal !== correo_PersonalConfirmacion) {
             Swal.fire('Error', 'Los correos no coinciden', 'error');
-            setIsSubmitting(false);
+            // setIsSubmitting(false);
             return;
         }
         // Regex contraseña alfanumerica 

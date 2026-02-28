@@ -8,15 +8,15 @@ use Illuminate\Http\Request;
 
 class MovimientoController extends Controller
 {
-    //Mostrar movimientos 
+    //Mostrar movimientos - index (mostrar todos lo movimientos)
     public function index()
     {
         $movimientos = Movimiento::with(['producto', 'usuario'])->get();
         return response()->json($movimientos);
     }
 
-    // Crear movimientos
-    public function store(Request $request)
+    // Crear movimientos - store (crear movimiento)
+    public function store(Request $request) 
     {
         $request->validate([
             'tipo' => 'required|in:entrada,salida',
@@ -45,7 +45,7 @@ class MovimientoController extends Controller
 
     }
 
-    
+    // Mostrar por id 
     public function show(string $id)
     {
         $movimiento = Movimiento::with(['producto', 'usuario'])->find($id);
@@ -57,7 +57,7 @@ class MovimientoController extends Controller
         return response()->json($movimiento);
     }
 
-    
+    // Actualizar movimiento
     public function update(Request $request, string $id)
     {
         $movimientos = Movimiento::find($id);
@@ -78,9 +78,7 @@ class MovimientoController extends Controller
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // borra el movimiento
     public function destroy(string $id)
     {
         $movimientos = Movimiento::find($id);

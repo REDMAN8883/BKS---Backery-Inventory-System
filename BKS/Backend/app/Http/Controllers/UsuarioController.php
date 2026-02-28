@@ -32,7 +32,10 @@ class UsuarioController extends Controller
             'activo' => 'nullable|boolean',
         ]);
         $data = $request->all();
+        // Asignamos el rol de cliente por defecto.
         $data['id_Rol'] = 3;
+        // Verificamos el usuario nuevo
+        $data['correo_Verificado'] = now();
 
         //Encriptamos la contraseña
         $data['contrasena'] = Hash::make($request->contrasena);

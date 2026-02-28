@@ -9,11 +9,12 @@ use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\MovimientoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RecuperarContrasenaController;
+// use App\Http\Controllers\CodigoController;
 
 // Ruta del login
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/recuperar-password', [RecuperarContrasenaController::class, 'RecuperarContrasena']);
-
+// Route::post()
 
 // Rutas protegidas para el Admin
 Route::middleware(['auth.jwt','role:admin'])->group(function (){
