@@ -7,9 +7,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Principal from "./pages/Principal";
 import Login from "./pages/Login";
 import Register from "./pages/Registro";
-import RecuperarContraseña from "./pages/R_Contrasena1";
-import RecuperarContraseña2 from "./pages/R_Contrasena2";
-import RecuperarContraseña3 from "./pages/R_Contrasena3";
+import EnvioCodigo from "./pages/Envio_Codigo";
+import Confirmacion_Codigo from "./pages/Confirmacion_Codigo";
+import CambioContraseña from "./pages/Cambio_Contraseña";
 
 // Importaciones de las demas vistas
 import LayoutGeneral from "../Layouts/LayoutGeneral";
@@ -66,9 +66,9 @@ function AppRoutes() {
       {/* Registro */}
       <Route path="/register" element={<Register />} />
       {/* Recuperacion de contraseña */}
-      <Route path="/Recuperar" element={<RecuperarContraseña />} />
-      <Route path="/Recuperar2" element={<RecuperarContraseña2 />} />
-      <Route path="/Recuperar3" element={<RecuperarContraseña3 />} />
+      <Route path="/Recuperar" element={<EnvioCodigo />} />
+      <Route path="/Recuperar2" element={<Confirmacion_Codigo />} />
+      <Route path="/Recuperar3" element={<CambioContraseña />} />
 
       {/* Rutas protegidas*/}
       <Route 
