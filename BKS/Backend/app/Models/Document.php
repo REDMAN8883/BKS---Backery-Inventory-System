@@ -13,7 +13,7 @@ class Document extends Model
 
     protected $fillable = [
         'nombre',
-        'abreviatura'
+        'abreviatura',
     ];
 
     public $timestamps = false;

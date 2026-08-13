@@ -10,12 +10,13 @@ export default function NavBar(){
         admin: [
             { path: "/admin/catalogo", label: "Catalogo"},
             { path: "/admin/perfil", label: "Perfil"},
+            { path: "/login", label: "Login" }, // no ayuda a quitar la sesion solo regresa jajajaj
             // Me faltan rutas
         ],
         cliente: [
             { path: "/cliente/catalogo", label: "Catalogo"},
             { path: "/cliente/perfil", label: "Perfil"},
-            { path: "/login", label: "Login" },
+            { path: "/login", label: "Login" }, // no ayuda a quitar la sesion solo regresa jajajaj
 
             // Faltan mas rutas
         ],

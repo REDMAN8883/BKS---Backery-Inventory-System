@@ -54,7 +54,7 @@ export default function Login() {
     // Loading para regresar (Pagina Principal)
     const goBackHome = async () => {
         setLoanding(true);
-        navigate("/");
+        navigate("/HomePage");
     };
 
     // // Load Form Recovery Password
@@ -188,7 +188,7 @@ export default function Login() {
                                 </div>
 
                                 {/* Recovery Password */}
-                                <Link to="/recuperar-contrasena" className={styles.StepOne}>
+                                <Link to="/solicitarCodigo" className={styles.StepOne}>
                                     Se me olvido la contraseña
                                 </Link>
                             </div>

@@ -13,7 +13,7 @@ class Usuario extends Model
     protected $fillable = [
         'nombres',
         'apellidos',
-        'tipo_Documento',
+        'id_Document',
         'numero_Documento',
         'numero_Celular',
         'contrasena',
@@ -21,6 +21,11 @@ class Usuario extends Model
         'correo_Personal',
         'imagen_Usuario',
         'correo_Verificado',
+        'prefijo',
+        'acepta_terminos',
+        'fecha_aceptacion_terminos',
+        'confirma_mayoria_edad',
+        'fecha_confirmacion_edad',
         'activo',
         'id_Rol',
     ];

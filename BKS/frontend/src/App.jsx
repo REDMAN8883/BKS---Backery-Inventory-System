@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // Pagina principal y publicas
 import Principal from "./pages/HomePage";
 import Login from "./pages/Login";
-import Register from "./pages/Registro";
+import Register from "./pages/Register";
 import EnvioCodigo from "./pages/Envio_Codigo";
 import Confirmacion_Codigo from "./pages/Confirmacion_Codigo";
 import CambioContraseña from "./pages/Cambio_Contraseña";
@@ -72,10 +72,13 @@ function AppRoutes() {
       {/* Registro */}
       <Route path="/register" element={<Register />} />
       {/* Recuperacion, verificacion y cambio de contraseña */}
-      <Route path="/Solicitud-de-codigo" element={<EnvioCodigo />} />
+      <Route path="/solicitarCodigo" element={<EnvioCodigo />} />
       <Route path="/Verificar-codigo" element={<Confirmacion_Codigo />} />
       <Route path="/Recuperar3" element={<CambioContraseña />} />
+      {/* Redireccion de vista por si esta con Google */}
       <Route path="/google-success" element={<Google />} />
+      {/* Ruta para el regreso al Home */}
+      <Route path="/HomePage" element={<Principal />} />
 
       {/* Rutas protegidas*/}
       <Route 

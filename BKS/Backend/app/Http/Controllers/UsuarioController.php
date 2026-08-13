@@ -22,20 +22,32 @@ class UsuarioController extends Controller
         $request->validate([
             'nombres' => 'required|string|max:50',
             'apellidos' => 'required|string|max:50',
-            'tipo_Documento' => 'nullable|string|max:20',
+            'id_Document' => 'required|integer|exists:documents,id',
             'numero_Documento' => 'nullable|string|max:100',
+            'prefijo' => 'required|string|max:10',
             'numero_Celular' => 'required|string|max:100',
             'contrasena' => 'required|string|max:255',
             'correo_Empresarial' => 'nullable|string|max:100',
             'correo_Personal' => 'nullable|string|max:100',
             'imagen_Usuario' => 'nullable|string|max:255',
+            'acepta_terminos' => 'required|boolean',
+            'confirma_mayoria_edad' => 'required|boolean',
             'activo' => 'nullable|boolean',
         ]);
         $data = $request->all();
         // Asignamos el rol de cliente por defecto.
-        $data['id_Rol'] = 3;
+        $data['id_Rol'] = 4;
         // Verificamos el usuario nuevo
         $data['correo_Verificado'] = now();
+
+        // Validamos los checks y los guardamos
+        $data['fecha_aceptacion_terminos'] = $request->acepta_terminos
+            ? now()
+            : null;
+
+        $data['fecha_confirmacion_edad'] = $request->confirma_mayoria_edad
+            ? now()
+            : null;
 
         //Encriptamos la contraseña
         $data['contrasena'] = Hash::make($request->contrasena);
