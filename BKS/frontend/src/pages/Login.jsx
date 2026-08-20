@@ -1,3 +1,4 @@
+// Importaciones necesarias
 import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom";
 
@@ -56,12 +57,6 @@ export default function Login() {
         setLoanding(true);
         navigate("/HomePage");
     };
-
-    // // Load Form Recovery Password
-    // const recoveryFormStepOne = async () => {
-    //     setLoanding(true);
-    //     navigate("/recuperar-contrasena");
-    // };
 
     // Conexion a la los controladores y apis
     const loginUser = async (e) => {
@@ -138,9 +133,8 @@ export default function Login() {
 
                 <div className={styles.container}>
                     <div className={styles.logoContainer}>
-                        <img className={styles.imageLogin} src={BusinessLogo} alt="" />
+                        <img className={styles.imageLogin} src={BusinessLogo} alt="Logo-BKS" />
                     </div>
-                    
 
                     <div className={styles.form}>
                         <h1>Inicio de sesión</h1>
@@ -188,7 +182,7 @@ export default function Login() {
                                 </div>
 
                                 {/* Recovery Password */}
-                                <Link to="/solicitarCodigo" className={styles.StepOne}>
+                                <Link to="/sendCode" className={styles.StepOne}>
                                     Se me olvido la contraseña
                                 </Link>
                             </div>

@@ -19,7 +19,7 @@ class CodigoRecuperacionMail extends Mailable
 
     public function build()
     {
-        return $this->subject('codigo de verificacion')
+        return $this->subject('Código de verificación')
                     ->view('email.codigo');
     }
 }

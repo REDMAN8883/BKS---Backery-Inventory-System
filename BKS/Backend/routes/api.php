@@ -16,10 +16,10 @@ use App\Http\Controllers\DocumentsController;
 // Ruta del login
 Route::post('/login', [AuthController::class, 'login']);    
 Route::put('/register', [AuthController::class, 'register']);
-Route::put('/cambiar-contrasena', [AuthController::class, 'cambiarContrasena']);
 // Ruta de recuperacion, verificar y cambiar contraseña
-Route::post('recuperar-contrasena', [RecuperarContrasenaController::class, 'RecuperarContrasena']);
-Route::post('/verificar-correo', [CodigoController::class, 'verificarCorreo']);
+Route::post('codeSending', [RecuperarContrasenaController::class, 'verifyEmail']);
+Route::post('/confirmCode', [CodigoController::class, 'existingCode']);
+Route::put('/cambiar-contrasena', [AuthController::class, 'cambiarContrasena']);
 // Route::post()
 Route::get('/documents', [DocumentsController::class, 'index']);
 

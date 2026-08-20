@@ -1,0 +1,151 @@
+/* Background Page */
+.backgroundLogin{
+    min-height: 100vh;
+    background-color: var(--backgroundPage);
+    background: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-content: center;
+}
+
+/* Background container form */
+.container{
+    display: flex;
+    flex-direction: column;
+    background: var(--containerForm);
+    align-items: center;
+    justify-self: center;
+    padding: 20px;
+    margin: 10px;
+    min-height: 90vh;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 20px 0px 50px rgba(186, 140, 102, 0.50);
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 10px 0;
+    width: 100%;
+}
+
+.imageLogo{
+    width: 160px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container h1{
+    color: var(--textColorOne);
+    -webkit-text-stroke: 0.7px black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.container h3{
+    color: var(--texColorThree);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.leyend{
+    background-color: var(--leyend);
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 0px rgba(170, 193, 92, 0.30);
+}
+
+.formContainer{
+    width: 100%;
+    height: 360px;
+    align-items: center;
+}
+
+.rowsOTP{
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.rowsOTP input{
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    max-width: 48px;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--backgroundInputs);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2 ease;
+}
+
+/* Buttons form */
+.buttonsCode{
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    align-items: center;
+}
+
+.buttonsCode button{
+    flex: 1;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    background-color: #6B8E23;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.buttonsCode button:hover{
+    background-color: var(--colorbuttonHover);
+}
+
+
+.containerTime{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.containerTime h6{
+    font-size: 0.8rem;
+}
+
+.containerTime button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.containerTime button:hover {
+    border-bottom: 1px solid black;
+}

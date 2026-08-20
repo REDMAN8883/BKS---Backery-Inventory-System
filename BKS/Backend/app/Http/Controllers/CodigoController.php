@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CodigoController extends Controller 
 {
-    public function verificarCorreo(Request $request){
+    public function existingCode(Request $request){
         // Peticiones de los campos que necesita para validar el codigo.
         $codigo = Contrasena_rest::where('usuario_id', $request->usuario_id)
         ->where('codigo', $request->codigo)

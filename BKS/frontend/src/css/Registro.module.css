@@ -1,13 +1,13 @@
-:root{
+/* :root{
     --backgroundregister: linear-gradient( 135deg, #BA8C66 5%, #71380D 39%, #805332 100%, #66340F 94%);
     --leyend: rgba(107, 142, 35, 0.54);
     --borderInputs: #301603;
     --textColorTwo: #301603;
     --termsAndConditions: #314801;
-}
+} */
 
 .backgroundRegister{
-    background-color: var(--backgroundregister);
+    background-color: var(--backgroundPage);
     min-height: 100vh;
     background: no-repeat;
     background-size: cover;
@@ -18,7 +18,7 @@
 .container{
     display: flex;
     flex-direction: column;
-    background: var(--containerLogin);
+    background: var(--containerForm);
     align-items: center;
     justify-self: center;
     padding: 20px;
@@ -354,6 +354,7 @@ input:hover{
     font-size: 14px;
     display: flex;
     justify-content: center;
+    /* justify-self: center; */
     width: 100%;
     margin-top: 18px;
 }
@@ -392,6 +393,11 @@ input[type="number"] {
 
     .form h1{
         font-size: 2.5rem;
+    }
+
+    .accountNew{
+        width: 50%;
+        justify-self: center;
     }
 }
 
@@ -502,6 +508,11 @@ input[type="number"] {
     .socialMedialContainer{
         margin: 20px;
         width: 80%;
+        justify-self: center;
+    }
+
+    .accountNew{
+        width: 30%;
         justify-self: center;
     }
 }

@@ -1,17 +1,7 @@
-:root{
-  --backgroundlogin: linear-gradient( 135deg, #BA8C66 5%, #71380D 39%, #805332 100%, #66340F 94%);
-  --containerLogin: linear-gradient(to bottom, #FADEAA 0%, #D29A6D 100%);
-  --textColorOne: #FFFFFF;
-  --textColorTwo: #301603;
-  --borderInputs: #301603;
-  --colorButton: #6B8E23;
-  --colorbuttonHover: #77AD09;
-}
-
 /* Background Page */
 .backgroundLogin{
   min-height: 100vh;
-  background-color: var(--backgroundlogin);
+  background-color: var(--backgroundPage);
   background: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -22,12 +12,12 @@
 .container{
   display: flex;
   flex-direction: column;
-  background: var(--containerLogin);
+  background: var(--containerForm);
   align-items: center;
   justify-self: center;
   padding: 20px;
   margin: 10px;
-  min-height: 110vh;
+  min-height: 90vh;
   width: 80%;
   border-radius: 12px;
   box-shadow: 20px 0px 50px rgba(186, 140, 102, 0.50);
@@ -259,8 +249,6 @@ input:hover{
 .socialButton i {
   font-size: 18px;
 }
-
-/* Media Query mobile */
 
 /* Media Query (Tablet) */
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -6,10 +6,36 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* Clase que tendrán tus páginas */
+/* Animations Page*/
 #page-fade {
     opacity: 0;
     animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+:root{
+    /* Background Page */
+    --backgroundPage: linear-gradient( 135deg, #BA8C66 5%, #71380D 39%, #805332 100%, #66340F 94%);
+
+    /* Backgorund containers */
+    --containerForm: linear-gradient(to bottom, #FADEAA 0%, #D29A6D 100%);
+
+    /* Text colors */
+    --textColorOne: #FFFFFF;
+    --textColorTwo: #301603;
+    --texColorThree: #000000;
+
+    /* Background y decorations Button */
+    --colorButton: #6B8E23;
+    --colorbuttonHover: #77AD09;
+
+    /* Decortaions Inputs */
+    --borderInputs: #301603;
+    --borderInputs: #301603;
+    --backgroundInputs: #FFFF;
+
+    /* Others */
+    --leyend: rgba(107, 142, 35, 0.54);
+    --termsAndConditions: #314801;
 }
 
 /* Definición de la animación */

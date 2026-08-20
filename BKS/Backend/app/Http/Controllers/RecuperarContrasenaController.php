@@ -13,7 +13,7 @@ use App\Mail\CodigoRecuperacionMail;
 
 class RecuperarContrasenaController extends Controller
 {
-    public function RecuperarContrasena(Request $request)
+    public function verifyEmail(Request $request)
     {
         // Validar correo del usuario.
         $request->validate([
@@ -79,15 +79,15 @@ class RecuperarContrasenaController extends Controller
 
         // Despues de guardar el codigo - guardamos el ID del usuario que lo pidio
         return response()->json([
-            'mensaje' => 'Codigo enviado correctamente.',
+            'message' => 'Codigo enviado correctamente.',
             'usuario_id' => $usuario->id
         ]);
 
-        // Mensaje por si el usuario no existe.
-        if(!$usuario){
-            return response()->json([
-                'message'=>'usuario no encontrado'
-            ], 422);
-        }
+        // // Mensaje por si el usuario no existe.
+        // if(!$usuario){
+        //     return response()->json([
+        //         'message'=>'usuario no encontrado'
+        //     ], 422);
+        // }
     }
 }
