@@ -19,8 +19,8 @@ Route::put('/register', [AuthController::class, 'register']);
 // Ruta de recuperacion, verificar y cambiar contraseña
 Route::post('codeSending', [RecuperarContrasenaController::class, 'verifyEmail']);
 Route::post('/confirmCode', [CodigoController::class, 'existingCode']);
-Route::put('/cambiar-contrasena', [AuthController::class, 'cambiarContrasena']);
-// Route::post()
+Route::put('/passwordChange', [AuthController::class, 'passwordChange']);
+// Ruta de documentos (llamado)
 Route::get('/documents', [DocumentsController::class, 'index']);
 
 // Rutas protegidas para el Admin

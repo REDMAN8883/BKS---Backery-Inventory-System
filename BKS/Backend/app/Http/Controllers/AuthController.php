@@ -119,7 +119,7 @@ class AuthController extends Controller
     }
 
     // Funcion para cambiar la contraseña del usuario - para la recuperacion de contraseña
-    public function cambiarContrasena(Request $request)
+    public function passwordChange(Request $request)
     {
         try{
             Log::info('=== CAMBIAR CONTRASEÑA  ===');

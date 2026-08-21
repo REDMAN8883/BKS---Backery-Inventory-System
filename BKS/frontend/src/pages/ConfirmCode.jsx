@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 // Css
-import styles from '../css/codeSteps/ConfirmCode.module.css';
+import styles from '../css/codeSteps/confirmCode.module.css';
 
 // Pages o componentes necesarios
 import LoadingOverlay from "../components/LoandingOverlay";
@@ -24,6 +24,7 @@ export default function ConfirmacionCodigo(){
     const correo = localStorage.getItem("correo");
     // Loadings
     const [loading, setLoanding] = useState(false); 
+    const [loading2, setLoanding2] = useState(false); 
     // Navegar
     const navigate = useNavigate();
     // tiempo y reenvio
@@ -105,7 +106,7 @@ export default function ConfirmacionCodigo(){
             } else {
                 // Codigo correcto
                 Swal.fire('Codigo exitoso', 'Codgio verificado correctamente', 'success');
-                navigate('/Recuperar3');
+                navigate('/passwordChange');
             }
         } catch (error){
             // Musetra el error
@@ -119,6 +120,7 @@ export default function ConfirmacionCodigo(){
 
     const resendingCode = async (e) => {
         e.preventDefault();
+        setLoanding2(true);
 
         try {
             const res = await axios.post("http://127.0.0.1:8000/api/codeSending",
@@ -153,6 +155,8 @@ export default function ConfirmacionCodigo(){
             console.error("Error", error);
 
             Swal.fire("Error", error.response?.data?.error || "Error al reenviar el codigo", "error");
+        } finally {
+            setLoanding2(false);
         }
     };
 
@@ -183,6 +187,7 @@ export default function ConfirmacionCodigo(){
     return(
             <> 
                 <LoadingOverlay visible={loading} text="Verificando codigo..."/>
+                <LoadingOverlay visible={loading2} text="Reenviando codigo..."/>
 
                 <div className={styles.backgroundLogin} id="page-fade">
                     <div className={styles.container}>
@@ -229,9 +234,9 @@ export default function ConfirmacionCodigo(){
                                         <button
                                             type="button"
                                             onClick={resendingCode}
-                                            disabled={loading}
+                                            disabled={loading2}
                                         >
-                                        {loading ? "Reenviando código..." : "Reenviar código"}
+                                        {loading2 ? "Reenviando código..." : "Reenviar código"}
                                         </button>
                                     )}
                                 </div>

@@ -190,7 +190,7 @@ export default function Login() {
                             <div className={styles.buttonsLogin}>
                                 {/* Button LogIn */}
                                 <button type="submit" className="btn-custom" disabled={loading}>
-                                    {loading ? "Validando" : "Iniciar sesión"}
+                                    {loading ? "Validando..." : "Iniciar sesión"}
                                 </button>
                                 {/* Button GoBack */}
                                 <button onClick={goBackHome}  className="btn-custom" disabled={loading}>

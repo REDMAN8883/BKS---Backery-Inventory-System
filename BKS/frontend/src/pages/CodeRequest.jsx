@@ -10,7 +10,7 @@ import BusinessLogo from "../assets/BussinesLogo.png"
 import LoadingOverlay from "../components/LoandingOverlay";
 
 // CSS
-import styles from '../css/codeSteps/CodeRequest.module.css';
+import styles from '../css/codeSteps/codeRequest.module.css';
 
 // Alertas
 import Swal from "sweetalert2";

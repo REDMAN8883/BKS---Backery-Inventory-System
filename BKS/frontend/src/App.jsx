@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SendCode from "./pages/CodeRequest";
 import ConfirmCode from "./pages/ConfirmCode";
-import CambioContraseña from "./pages/Cambio_Contraseña";
+import PasswordChange from "./pages/PasswordChange";
 
 // Importaciones de las demas vistas
 import LayoutGeneral from "../Layouts/LayoutGeneral";
@@ -74,7 +74,7 @@ function AppRoutes() {
       {/* Recuperacion, verificacion y cambio de contraseña */}
       <Route path="/sendCode" element={<SendCode />} />
       <Route path="/confirmCode" element={<ConfirmCode />} />
-      <Route path="/Recuperar3" element={<CambioContraseña />} />
+      <Route path="/passwordChange" element={<PasswordChange />} />
       {/* Redireccion de vista por si esta con Google */}
       <Route path="/google-success" element={<Google />} />
       {/* Ruta para el regreso al Home */}

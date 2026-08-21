@@ -13,7 +13,7 @@ import LoadingOverlay from "../components/LoandingOverlay";
 import BusinessLogo from "../assets/BussinesLogo.png"
 
 // css
-import styles from '../css/Registro.module.css';
+import styles from '../css/Register.module.css';
 
 // Alertas
 import Swal from "sweetalert2";
