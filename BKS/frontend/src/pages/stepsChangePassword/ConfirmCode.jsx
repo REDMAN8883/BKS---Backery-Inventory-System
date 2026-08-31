@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 // Css
-import styles from '../css/codeSteps/confirmCode.module.css';
+import styles from '../../css/codeSteps/confirmCode.module.css';
 
 // Pages o componentes necesarios
-import LoadingOverlay from "../components/LoandingOverlay";
+import LoadingOverlay from "../../components/LoandingOverlay";
 import Swal from "sweetalert2";
 
 // Images
-import BusinessLogo from "../assets/BussinesLogo.png"
+import BusinessLogo from "../../assets/BussinesLogo.png"
 
 
 

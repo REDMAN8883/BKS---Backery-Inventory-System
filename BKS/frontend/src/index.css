@@ -11,31 +11,52 @@ body {
     opacity: 0;
     animation: fadeIn 0.4s ease-in-out forwards;
 }
+/* 
+* {
+    outline: 1px solid red;
+} */
 
 :root{
     /* Background Page */
+    --color-background: #F5E8D0;
     --backgroundPage: linear-gradient( 135deg, #BA8C66 5%, #71380D 39%, #805332 100%, #66340F 94%);
 
-    /* Backgorund containers */
+    /* Background Navbar and DashBoard */
+    --gradient-navbar: linear-gradient( to top, #5E2C07 9%, #875129 48%);
+
+    /* Backgorund containers and sections */
     --containerForm: linear-gradient(to bottom, #FADEAA 0%, #D29A6D 100%);
+    --gradient-section: linear-gradient( to bottom, #5E2B05 55%, #BA8C66 100%);
+    --colorBackground_us: rgba(250, 222, 178, 0.36);
+    --bg-gradient: linear-gradient(180deg, #806147 5%, #562907 39%, #50331E 59%, #422007 94%);
+    --bgMembership: linear-gradient(135deg, #422007 5%, #50331E 39%, #562907 59%, #806147 94%);
 
     /* Text colors */
     --textColorOne: #FFFFFF;
     --textColorTwo: #301603;
-    --texColorThree: #000000;
+    --textColorThree: #000000;
+    --textColorFour: #2F2F2F;
+    --text-light: #f5e9dc;
+    --textColorBold: #5E2B05;
+    /* Titles */
+    --colorTitlesOne: #5e2c07;
+    --colorTitlesTwo: #ED9351;
 
     /* Background y decorations Button */
     --colorButton: #6B8E23;
     --colorbuttonHover: #77AD09;
+    --borderButtonDefault: #0000;
 
     /* Decortaions Inputs */
     --borderInputs: #301603;
-    --borderInputs: #301603;
     --backgroundInputs: #FFFF;
+    --backgroundInputsFilter: #5E2B05;
 
     /* Others */
     --leyend: rgba(107, 142, 35, 0.54);
     --termsAndConditions: #314801;
+    --cream-bg: #f9f2e7;
+    --membershipMaster: linear-gradient(to bottom, #D4AF37 0%, #8B4513 100%);
 }
 
 /* Definición de la animación */

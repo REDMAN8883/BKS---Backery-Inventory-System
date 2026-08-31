@@ -480,13 +480,16 @@ input[type="number"] {
     }
 
     .rowsPrefix > div:last-child label{
-        left: 12px !important;
+        left: 10px !important;
+        padding-right: 5px !important;
+        font-size: 10.9px;
     }
 
     .rowsPrefix > div:last-child::before {
         left: 10px !important;
         min-width: auto !important;
-        width: 130px !important;
+        width: 70px !important;
+        
     }
 
     .accountNew{
@@ -515,4 +518,14 @@ input[type="number"] {
         width: 60%;
         justify-self: center;
     }
+
+    .inputsGroup::before {
+        padding-right: 5px !important;
+        left: 5px !important;
+    }
+
+    /* .inputsGroup input {
+        padding-right: 5px !important;
+        left: 2px !important;
+    } */
 }

@@ -1,8 +1,8 @@
 // Importaciones necesarias
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from 'axios';
 import { getCountries, getCountryCallingCode } from "react-phone-number-input";
+import axios from 'axios';
 import flags from "react-phone-number-input/flags";
 import "react-phone-number-input/style.css";
 
@@ -26,11 +26,6 @@ const [loading, setLoanding] = useState(false);
 const [country, setCountry] = useState("CO");
 
 const [documents, setDocuments] = useState([]);
-// const _prefix = `+${getCountryCallingCode(country)}`;
-
-// Loadings
-// const [cargaRegresar, setCargaRegresar] = useState(false);
-// const [cargaLogin, setCargaLogin] = useState(false);
 
 // Navegacion
 const navigate = useNavigate();
@@ -38,7 +33,6 @@ const navigate = useNavigate();
 // // Visibilidad de las contraseña
 const [showPass, setShowPass] = useState(false);
 const [ showCountries, setShowCountries] = useState(false);
-// const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
 // // Alfanumerico para contraseñas
 const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&#]).{8,}$/;
@@ -114,7 +108,6 @@ const registerUser = async (e) => {
     // Creacion del usuario
     try {
 
-        
         const res = await axios.post("http://127.0.0.1:8000/api/usuarios", formData);
 
         // console.log(res.data);
@@ -134,37 +127,6 @@ const registerUser = async (e) => {
     }
 }
 
-// SIN REQUERIR AUN
-
-//     const handleCancelar = () => {
-//     Swal.fire({
-//       title: 'Cancelado',
-//       text: 'Registro cancelado.',
-//       icon: 'info',
-//       timer: 1200,
-//       showConfirmButton: false
-//     });
-//     setTimeout(() => navigate('/admin/usuarios'), 1200);
-//   };
-
-// Loading por si se tiene cuenta
-// const handelLogin = async () => {
-//     setCargaLogin(true);
-
-//     setTimeout(() =>{
-//         navigate("/login");
-//     }, 1500);
-// }
-
-// Loading para regresar
-// const handelRegresar = async () => {
-//     setCargaRegresar(true);
-
-//     setTimeout(() =>{
-//         navigate("/");
-//     }, 1500);
-// };
-
 // Background
 useEffect(() => {
     document.body.style.background ="linear-gradient( 135deg, #BA8C66 5%, #71380D 39%, #805332 100%, #66340F 94%)";
@@ -183,14 +145,6 @@ useEffect(() => {
         .catch((err) => console.error(err));
 }, []);
 
-// Visualizacion de las banderas
-// const getFlagEmoji = (countryCode) => {
-//     return countryCode
-//         .toUpperCase()
-//         .replace(/./g, char =>
-//             String.fromCodePoint(127397 + char.charCodeAt())
-//         );
-// }
 
 return(
     <>

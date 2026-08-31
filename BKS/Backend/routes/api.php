@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RecuperarContrasenaController;
 use App\Http\Controllers\CodigoController;
 use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\MembershipController;
 
 
 // Ruta del login
@@ -31,6 +32,7 @@ Route::middleware(['auth.jwt','role:admin'])->group(function (){
     Route::apiResource('subcategorias', SubcategoriaController::class);
     // Ruta de Movimientos
     Route::apiResource('movimientos', MovimientoController::class);
+
 });
 
 // Ruta de Usuarios
@@ -42,4 +44,6 @@ Route::middleware(['auth.jwt','role:admin,cliente'])->group(function (){
     Route::apiResource('productos', ProductoController::class);
     // Ruta de Recetas
     Route::apiResource('recetas', RecetaController::class);
+    // Ruta de membresias
+    Route::get('/membresias', [MembershipController::class, 'index']);
 });

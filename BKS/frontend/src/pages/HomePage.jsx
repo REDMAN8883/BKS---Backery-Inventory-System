@@ -9,10 +9,9 @@ import bread from "../assets/bread.png";
 import shelf from "../assets/shelf.png";
 
 // Css
-import styles from "../css/LandingPage.module.css";
+import styles from "../css/homePage.module.css";
 // Componenetes y paginas necesarias
 import Footer from "../components/Footer";
-import LoadingOverlay from "../components/LoandingOverlay";
 
 export default function Principal()  {
 

@@ -3,18 +3,21 @@ import { AuthProvider} from "./context/AuthProvider";
 import { useAuth } from "./context/useAuth";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// Conforma la pagina
+import LayoutGeneral from "../Layouts/LayoutGeneral";
+
 // Pagina principal y publicas
 import Principal from "./pages/HomePage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import SendCode from "./pages/CodeRequest";
-import ConfirmCode from "./pages/ConfirmCode";
-import PasswordChange from "./pages/PasswordChange";
-
-// Importaciones de las demas vistas
-import LayoutGeneral from "../Layouts/LayoutGeneral";
-import Catalogo from "./pages/Catalogo";
+import SendCode from "./pages/stepsChangePassword/CodeRequest";
+import ConfirmCode from "./pages/stepsChangePassword/ConfirmCode";
+import PasswordChange from "./pages/stepsChangePassword/PasswordChange";
 import Google from "./pages/GoogleSuccess";
+
+// Vista para el cliente
+import PanelIntialClient from "./pages/ClientView/PanelInitialClient";
+import Subscriptions from "./pages/ClientView/PanelSubscriptions";
 
 
 
@@ -51,7 +54,7 @@ function RutasProtegidas({ allowedRoles = [], children }) {
 function AppRoutes() {
   const { user, loading } = useAuth();
   
-  console.log("AppRoutes - user:", user, "loading:", loading); // Debug
+  // console.log("AppRoutes - user:", user, "loading:", loading); // Debug
   
   // Mientras carga, mostrar loading
   if (loading) {
@@ -89,7 +92,7 @@ function AppRoutes() {
           </RutasProtegidas>
         }
       >
-        <Route index element={<Catalogo />}/>
+        <Route index element={<PanelIntialClient />}/>
       </Route>
 
       {/* Rutas protegidas*/}
@@ -101,7 +104,8 @@ function AppRoutes() {
           </RutasProtegidas>
         }
       >
-        <Route index element={<Catalogo />}/>
+        <Route index element={<PanelIntialClient />}/>
+        <Route path="panelSubscriptions" element={<Subscriptions/>}/>
       </Route>
       
 
@@ -111,7 +115,7 @@ function AppRoutes() {
 }
 
 export default function App(){
-  console.log("App component rendering"); // Debug
+  // console.log("App component rendering"); // Debug
   
   return (
     <AuthProvider>
@@ -121,28 +125,3 @@ export default function App(){
     </AuthProvider>
   );
 }
-
-// function AppRoutes() {
-//   const { user } = useAuth();
-//   console.log("Usuario en AppRoutes:", user);
-
-//   return (
-//     <Routes>
-//           {/* Usuario no logueado → Login visible */}
-//           <Route path="/" element={<Login />} />
-//           <Route path="/login" element={<Login />} />
-//           <Route path="*" element={<Navigate to="/login" />} />
-//     </Routes>
-//   );
-
-// }
-
-// export default function App() {
-//   return (
-//     <AuthProvider>
-//       <BrowserRouter>
-//         <AppRoutes />
-//       </BrowserRouter>
-//     </AuthProvider>
-//   );
-// }

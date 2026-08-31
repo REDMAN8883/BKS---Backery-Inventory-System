@@ -1,38 +1,26 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/useAuth";
-// CSS
-import '../css/Navbar.css';
+import { useAuth } from "../context/useAuth";   
+import linksByRole from '../components/LinkByRole';
+
+// Css
+import styles from '../css/clientCss/navBar.module.css';
+
+// Importaciones de imagenes
+import BusinessLogo from "../assets/BussinesLogo.png";
 
 export default function NavBar(){
     const { user } = useAuth();
-
-    const linksPorRol = {
-        admin: [
-            { path: "/admin/catalogo", label: "Catalogo"},
-            { path: "/admin/perfil", label: "Perfil"},
-            { path: "/login", label: "Login" }, // no ayuda a quitar la sesion solo regresa jajajaj
-            // Me faltan rutas
-        ],
-        cliente: [
-            { path: "/cliente/catalogo", label: "Catalogo"},
-            { path: "/cliente/perfil", label: "Perfil"},
-            { path: "/login", label: "Login" }, // no ayuda a quitar la sesion solo regresa jajajaj
-
-            // Faltan mas rutas
-        ],
-    };
-
-    const links = linksPorRol[user?.rol] || [];
+    // console.log("USER:", user);
+    const links = linksByRole[user?.rol] || [];
 
     return (
-        <>
-            <nav>
-                {links.map((link) => (
-                    <Link key={link.path} to={link.path} className="Links">
-                        {link.label}
-                    </Link>
-                ))}
-            </nav>
-        </>
-    );
+        <aside className={styles.navbar}>
+            <img className={styles.LogoNav} src={BusinessLogo} alt="Imagen_BKS" />
+            {links.map((link) => (
+                <Link className={styles.link} key={link.path} to={link.path}>
+                    {link.label}
+                </Link>
+            ))}
+        </aside>
+    )
 }

@@ -81,9 +81,9 @@ export default function Login() {
                 localStorage.setItem("user", JSON.stringify(usuario));
                 localStorage.setItem("usuario_id", usuario.id);
             } else {
-                localStorage.setItem("token", token);
-                localStorage.setItem("user", JSON.stringify(usuario));
-                localStorage.setItem("usuario_id", usuario.id);
+                sessionStorage.setItem("token", token);
+                sessionStorage.setItem("user", JSON.stringify(usuario));
+                sessionStorage.setItem("usuario_id", usuario.id);
             }
 
             showToast("Inicio de sesión exitoso", "success");

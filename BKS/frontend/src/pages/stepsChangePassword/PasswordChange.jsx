@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 // Importaciones de imagenes
-import BusinessLogo from "../assets/BussinesLogo.png"
+import BusinessLogo from "../../assets/BussinesLogo.png"
 
 // Pages o componentes necesarios
-import LoadingOverlay from "../components/LoandingOverlay";
+import LoadingOverlay from "../../components/LoandingOverlay";
 import Swal from "sweetalert2";
 
 // Css
-import styles from  '../css/codeSteps/passwordChange.module.css';
+import styles from  '../../css/codeSteps/passwordChange.module.css';
 
 
 export default function CambioContraseña(){

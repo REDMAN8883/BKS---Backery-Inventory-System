@@ -10,10 +10,10 @@ import '../src/css/LayoutGeneral.css';
 export default function LayoutGeneral() {
     return (
         <div className="app-container">
-            <div className="navbar-container">
+            {/* <div className="navbar-container">
                 <NavBar />
             </div>
-            
+             */}
 
             <main className="main-container">
                 <Outlet/>

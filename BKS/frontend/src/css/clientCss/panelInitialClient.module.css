@@ -1,0 +1,398 @@
+
+
+.pageWrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+/* Fondo oscuro */
+.backgroundSectionOne {
+    background: var(--bg-gradient);
+    padding: 20px 15px 60px 15px;
+    color: var(--textColorOne);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Contenedor NavBar y filtro */
+.headerCard {
+    background: var(--bg-gradient);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Buscador y filtros */
+.searchBarContainer {
+    background-color: var(--cream-bg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 36px 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--borderInputs);
+    background-color: var(--backgroundInputs);
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888;
+}
+
+.divider {
+    width: 100%;
+    max-width: 200px;
+    height: 1px;
+    background-color: #d8c2b0;
+}
+
+.filterChips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.chip {
+    background-color: transparent;
+    border: 1px solid var(--textColorTwo);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--textColorTwo);
+    cursor: pointer;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.chipActive {
+    background-color: var(--backgroundInputsFilter);
+    color: var(--textColorOne);
+    border-color: var(--backgroundInputsFilter);
+}
+
+.heroSection {
+    width: 100%;
+    /* max-width: 1100px; */
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.heroContent {
+    width: 100%;
+    /* max-width: 550px; */
+}
+
+.heroTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    color: var(--textColorOne);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hgText {
+    color: var(--colorTitlesTwo);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.dottedDivider {
+    border-bottom: 2px dashed rgab(255, 255, 255, 255, 0.2);
+    margin: 60px 0;
+    width: 100%;
+}
+
+.heroSubtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    display: flex;
+    text-align: center;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.buttonPrimary, .buttonSecond {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.buttonPrimary{
+    background: var(--colorButton);
+    color: var(--textColorOne);
+    border: none;
+    font-weight: 600;
+}
+
+.promoCardContainer {
+    perspective: 1000px;
+}
+
+.promoCard {
+    background-color: var(--cream-bg);
+    padding: 20px;
+    border-radius: 16px;
+    width: 260px;
+    transform: rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.promoBadge {
+    background-color: var(--colorButton);
+    color: var(--textColorOne);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.promoText {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--textColorTwo);
+}
+
+.promoHg {
+    color: var(--colorTitlesOne);
+    font-weight: 800;
+}
+
+.catalogSection h2{
+    color: var(--textColorOne);
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 2rem;
+    justify-self: center;
+    text-align: center;
+}
+
+.car{
+    background: var(--colorButton);
+    color: var(--textColorOne);
+    border: 1px solid var(--borderInputs);
+    border-radius: 4px;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .backgroundSectionOne{
+        width: 100%;
+        justify-self: center;
+    }
+    .searchBarContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .divider {
+        width: 1px;
+        height: 80px;
+        max-height: 200px;
+        background-color: #d8c2b0;
+    }
+
+    .heroSection {
+        display: flex;
+        justify-self: center;
+    }
+
+    .heroTitle {
+        font-size: 4rem;
+    }
+
+    .heroSubtitle{
+        width: 90%;
+        justify-self: center ;
+    }
+    
+    .heroButtons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .catalogSection h2{
+        color: var(--textColorOne);
+        -webkit-text-stroke: 0.5px black;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        font-size: 2.7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .backgroundSectionOne{
+        width: 100%;
+        justify-self: center;
+    }
+
+    .searchBarContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .divider {
+        width: 1px;
+        height: 80px;
+        max-height: 200px;
+        background-color: #d8c2b0;
+    }
+
+    .heroSection {
+        display: flex;
+        justify-self: center;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+        width: 100%;
+        display: block;
+    }
+
+    .heroContent {
+        width: 100%;
+    }
+
+    .heroSection {
+        width: 100%;
+        display: flex;
+    }
+
+    .heroSubtitle {
+        width: 40%;
+        font-size: 1.2rem;
+    }
+
+    .heroButtons {
+        margin-left: 50px;
+    }
+
+    .promoCardContainer {
+        position: absolute;
+        margin: 200px -500px 0 80px;
+    }
+
+    .promoCard {
+        background-color: var(--cream-bg);
+        padding: 20px;
+        border-radius: 16px;
+        width: 350px;
+        height: 100px;
+        transform: rotate(5deg);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .promoBadge {
+        background-color: var(--colorButton);
+        color: var(--textColorOne);
+        font-size: 20px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .promoText {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+        color: var(--textColorTwo);
+    }
+}
+
+@media (min-width: 1025px) {
+    .heroSubtitle {
+        width: 30%;
+        font-size: 1.3rem;
+    }
+
+    .heroButtons {
+        margin-left: 5%;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .promoCardContainer {
+        position: absolute;
+        margin: 130px -60% 0 80px;
+    }
+
+    .promoCard {
+        width: 350px;
+        height: 150px;
+    }
+
+    .promoText {
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 0;
+        color: var(--textColorTwo);
+        display: block;
+        text-align: justify;
+    }
+
+    .catalogSection h2{
+        font-size: 3rem;
+    }
+}

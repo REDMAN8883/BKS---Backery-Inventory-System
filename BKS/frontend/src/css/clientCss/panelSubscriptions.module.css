@@ -1,0 +1,299 @@
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+header h1, h3 {
+    color: var(--textColorOne);
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.boldType {
+    color: var(--textColorBold);
+}
+
+.containerMembership {
+    background: var(--bgMembership);
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.membershipCard {
+    margin: 5px;
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.basico h2, .maestro h2, .gourmet h2 {
+    color: var(--textColorBold);
+    -webkit-text-stroke: 0.3px rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.8rem;
+}
+
+.basico {
+    background: #E8BF8E;
+}
+
+.gourmet {
+    background-color: #956845;
+}
+
+.maestro {
+    background: var(--membershipMaster);
+    position: relative;
+    overflow: hidden;
+    order: 3;
+}
+
+.maestro::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    background-image: url("../../assets/planMaestro.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    /* opacity: 0.25; */
+    z-index: 0;
+}
+
+.maestro h2, .membershipDescription, .membershipDays {
+    position: relative;
+    z-index: 1;
+}
+
+.membershipBenefits {
+    background-color: #BA8C66;
+    margin: 10px;
+    border-radius: 4px;
+    border: 1px solid #806147;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 10px;
+    color: var(--textColorOne);
+
+    box-shadow:
+        inset 10px 10px 20px rgba(80, 50, 30, 0.35),
+        inset -10px 10px 20px rgba(230, 190, 155, 0.35);
+}
+
+.membershipDescription {
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    margin: 5px;
+}
+
+.basico .membershipPrice {
+    background: #8B5E3C;
+    width: 50%;
+    justify-self: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    color:var(--textColorOne);
+    padding: 5px;
+}
+
+.gourmet .membershipPrice {
+    background: #5E2B05;
+    width: 50%;
+    justify-self: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    color: var(--textColorOne);
+    padding: 5px;
+}
+
+.maestro .membershipPrice {
+    background: #D1AA36;
+    width: 50%;
+    justify-self: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    color: var(--textColorOne);
+    padding: 5px;
+}
+
+.buyButton {
+    background-color: var(--colorButton);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buyButton:hover {
+    background: var(--colorbuttonHover);
+}
+
+.basico .buyButton  {
+    background: #D9D9D9;
+}
+
+
+@media (min-width: 768px) {
+    .containerMembership {
+        align-items: center;
+    }
+
+    .membershipCard {
+        width: 80%;
+    }
+
+    .membershipCard h2 {
+        font-size: 2.2rem;
+    }
+
+    .membershipDescription {
+        font-size: 1rem;
+        width: 80%;
+        justify-self: center;
+    }
+
+    .membershipDays {
+        font-size: 1.1rem;
+    }
+
+    .membershipBenefits {
+        width: 80%;
+        justify-self: center;
+    }
+
+    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
+        width: 30%;
+    }
+
+    .buyButton{
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h3 {
+        font-size: 1.7rem;
+    }
+
+    .containerMembership {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .membershipCard {
+        flex: 1;
+        padding-bottom: 20px;
+    }
+
+    .basico{
+        order: 1;
+        flex: none;
+        width: 30%;
+        height: 650px !important;
+    }
+    
+    .basico .membershipDescription {
+        font-size: 0.8rem;
+    }
+
+    .gourmet {
+        order: 3;
+        flex: none;
+        width: 30%;
+        height: 650px !important;
+    }
+
+    .gourmet .buyButton{
+        margin-top: 70px;
+    }
+
+    .maestro {
+        order: 2;
+    }
+
+    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1025px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h3 {
+        font-size: 1.7rem;
+    }
+
+    .containerMembership {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        width: 80%;
+        justify-self: center;
+        margin-bottom: 50px;
+    }
+
+    .membershipCard {
+        flex: 1;
+        width: 80%;
+        padding-bottom: 20px;
+    }
+
+    .basico{
+        order: 1;
+        flex: none;
+        width: 20%;
+        height: 650px !important;
+    }
+    
+    .basico .membershipDescription {
+        font-size: 0.8rem;
+    }
+
+    .gourmet {
+        order: 3;
+        flex: none;
+        width: 20%;
+        height: 650px !important;
+    }
+
+    .gourmet .buyButton{
+        margin-top: 70px;
+    }
+
+    .maestro {
+        order: 2;
+        order: 3;
+        flex: none;
+        width: 20%;
+    }
+
+    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
+        width: 50%;
+    }
+}

@@ -1,7 +1,6 @@
 html, body, #root {
     padding: 0;
     margin: 0;
-    
 }
 
 .app-container {
@@ -10,19 +9,10 @@ html, body, #root {
     min-height: 100vh; 
 }
 
-/* Navbar arriba y centrado */
-.navbar-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    background-color: aliceblue;
-    padding: 1rem;
-}
-
 /* Main ocupa todo el espacio sobrante */
 .main-container {
     flex-grow: 1;
-    padding: 2rem;
+    padding: 0;
 }
 
 /* Footer abajo y centrado */
