@@ -54,12 +54,12 @@
     box-sizing: border-box;
 }
 
-.searchIcon {
+.searchIcon i{
     position: absolute;
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 14px;
+    font-size: 16px;
     color: #888;
 }
 
@@ -170,6 +170,12 @@
     color: var(--textColorOne);
     border: none;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.buttonPrimary i{
+    font-size: 1.2rem;
 }
 
 .promoCardContainer {
@@ -223,11 +229,13 @@
 
 .car{
     background: var(--colorButton);
-    color: var(--textColorOne);
+    /* color: var(--textColorOne); */
     border: 1px solid var(--borderInputs);
     border-radius: 4px;
     font-size: 17px;
     margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -265,6 +273,7 @@
     .heroButtons {
         display: flex;
         justify-content: center;
+        /* width: 31%; */
     }
 
     .catalogSection h2{
@@ -320,6 +329,7 @@
 
     .heroButtons {
         margin-left: 50px;
+        width: 32%;
     }
 
     .promoCardContainer {

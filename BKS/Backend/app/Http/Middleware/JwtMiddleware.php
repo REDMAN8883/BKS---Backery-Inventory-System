@@ -15,7 +15,7 @@ class JwtMiddleware
         $token = $request->bearerToken();
         
         if(!$token){
-            return response()->json(['mensaje' => 'Token no proporcionado'], 404);
+            return response()->json(['mensaje' => 'Token no proporcionado'], 401);
         }
 
         try {

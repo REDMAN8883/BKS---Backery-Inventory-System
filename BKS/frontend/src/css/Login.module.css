@@ -68,7 +68,7 @@
   padding-right: 48px;
   font-size: 16px;
   background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   box-sizing: border-box;
   outline: none;
@@ -81,28 +81,32 @@ input:hover{
 }
 
 .inputsGroup label {
-  position: absolute;
-  left: 16px;
-  top: 0;
-  transform: translateY(-54%);
-  font-size: 14px;
-  color: var(--textColorTwo);
-  pointer-events: none;
-  padding: 0 4px;
-  z-index: 2;
-  
+    position: absolute;
+    left: 16px;
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    line-height: 1;
+    color: var(--textColorTwo);
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, transparent 50%, #ffffff 50%);
+    padding: 0 6px;
+    z-index: 2;
+    white-space: nowrap;
 }
 
-.inputsGroup::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 0;
-  transform: translateY(-1%);
-  width: 105px;
-  height: 2px;
-  background-color: #ffffff;
-  z-index: 1;
+.inputsGroup label:hover{
+  border: 1px solid ;
+}
+
+.rowsPrefix > div:first-child label {
+    left: 8px;
+    font-size: 0.7rem;
+}
+
+.rowsPrefix > div:last-child label {
+    left: 10px;
+    font-size: 0.7rem;
 }
 
 .toggle{

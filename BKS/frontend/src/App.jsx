@@ -18,6 +18,7 @@ import Google from "./pages/GoogleSuccess";
 // Vista para el cliente
 import PanelIntialClient from "./pages/ClientView/PanelInitialClient";
 import Subscriptions from "./pages/ClientView/PanelSubscriptions";
+import Profile from "./pages/ClientView/Profile";
 
 
 
@@ -106,6 +107,7 @@ function AppRoutes() {
       >
         <Route index element={<PanelIntialClient />}/>
         <Route path="panelSubscriptions" element={<Subscriptions/>}/>
+        <Route path="profile" element={<Profile/>}/>
       </Route>
       
 

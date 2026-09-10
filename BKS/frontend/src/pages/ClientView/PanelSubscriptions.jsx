@@ -59,13 +59,12 @@ export default function PanelSubscription () {
             <div>
                 <NavBar/>
 
-                <header >
+                <header className={styles.titlePlan} >
                     <h1>El secreto de la panadería <strong className={styles.boldType}>maestra</strong></h1>
                     <h3>Tu nueva <strong className={styles.boldType}>suscripción</strong></h3>
                 </header>
 
                 <div className={styles.containerMembership}>
-                    {/* <h1>membresias</h1> */}
 
                     {membership.map((membresia) =>(
                         <div key={membresia.id}
@@ -74,15 +73,12 @@ export default function PanelSubscription () {
                         >
                             <h2>{membresia.nombre}</h2>
                             <p className={styles.membershipDescription}>{membresia.descripcion}</p>
-                            <p className={styles.membershipDays}>{membresia.duracion_dias} dias</p>
-                            <div className={styles.membershipBenefits}>
-                                {membresia.beneficios.map((beneficio, index) => (
-                                    <p key={index}>
-                                        • {beneficio}
-                                    </p>
-                                ))}
+                            <div className={styles.priceInfo}>
+                                <p className={styles.membershipPrice}>${Number(membresia.precio).toLocaleString("es-CO")}</p>
+                                {getMembershipClass(membresia.nombre) !== "basico" && (
+                                    <p className={styles.otherInfo}>COP/mes <br />Facturado mensualmente</p>
+                                )}
                             </div>
-                            <p className={styles.membershipPrice}>${membresia.precio}</p>
 
                             <button 
                                 className={styles.buyButton}
@@ -91,14 +87,37 @@ export default function PanelSubscription () {
                                 {selectedMembership?.id === membresia.id
                                     ? "Plan seleccionado"
                                     : getMembershipClass(membresia.nombre) === "basico"
-                                        ? "Plan activo (Gratis)"
+                                        ? "Usa el básico gratis"
                                         : getMembershipClass(membresia.nombre) === "gourmet"
-                                            ? "Suscribirse (Intermedio)"
+                                            ? "Obtener plan Gourmet"
                                             : getMembershipClass(membresia.nombre) === "maestro"
-                                                ? "Suscribirse (Premium) "
+                                                ? "Obtener plan Maestro "
                                                 : "Comprar"
                                 }
                             </button>
+                            {getMembershipClass(membresia.nombre) !== "basico" && (
+                                <h6>Sin compromiso • Cancela en cualquier momento</h6>
+                            )}
+
+                            <hr className={styles.line} />
+
+                            {getMembershipClass(membresia.nombre) === "gourmet" && (
+                                <h5>Todo lo del Básico y:</h5>
+                            )}
+
+                            {getMembershipClass(membresia.nombre) === "maestro" && (
+                                <h5>Todo lo incluido en Gourmet, más:</h5>
+                            )}
+
+                            {/* <p className={styles.membershipDays}>{membresia.duracion_dias} dias</p> */}
+                            <div className={styles.membershipBenefits}>
+                                {membresia.beneficios.map((beneficio, index) => (
+                                    <p key={index}>
+                                        ✓ {beneficio}
+                                    </p>
+                                ))}
+                            </div>
+                            
                         </div>
                     ))}
                 </div>

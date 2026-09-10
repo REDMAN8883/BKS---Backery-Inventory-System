@@ -17,6 +17,7 @@ use App\Http\Controllers\MembershipController;
 // Ruta del login
 Route::post('/login', [AuthController::class, 'login']);    
 Route::put('/register', [AuthController::class, 'register']);
+Route::post('/usuarios', [UsuarioController::class, 'store']);
 // Ruta de recuperacion, verificar y cambiar contraseña
 Route::post('codeSending', [RecuperarContrasenaController::class, 'verifyEmail']);
 Route::post('/confirmCode', [CodigoController::class, 'existingCode']);
@@ -35,9 +36,6 @@ Route::middleware(['auth.jwt','role:admin'])->group(function (){
 
 });
 
-// Ruta de Usuarios
-    Route::apiResource('usuarios', UsuarioController::class);
-
 // Rutas protegidas para el Cliente
 Route::middleware(['auth.jwt','role:admin,cliente'])->group(function (){
     // Ruta de Productos
@@ -46,4 +44,10 @@ Route::middleware(['auth.jwt','role:admin,cliente'])->group(function (){
     Route::apiResource('recetas', RecetaController::class);
     // Ruta de membresias
     Route::get('/membresias', [MembershipController::class, 'index']);
+});
+
+Route::middleware(['auth.jwt'])->group(function (){
+    // Ruta de Usuarios
+    Route::apiResource('usuarios', UsuarioController::class)
+        ->except(['store']);
 });

@@ -11,8 +11,8 @@ body {
     opacity: 0;
     animation: fadeIn 0.4s ease-in-out forwards;
 }
-/* 
-* {
+
+/* * {
     outline: 1px solid red;
 } */
 
@@ -48,7 +48,7 @@ body {
     --borderButtonDefault: #0000;
 
     /* Decortaions Inputs */
-    --borderInputs: #301603;
+    --borderInputs: #612a03;
     --backgroundInputs: #FFFF;
     --backgroundInputsFilter: #5E2B05;
 
@@ -57,7 +57,9 @@ body {
     --termsAndConditions: #314801;
     --cream-bg: #f9f2e7;
     --membershipMaster: linear-gradient(to bottom, #D4AF37 0%, #8B4513 100%);
+    --Label: linear-gradient(to bottom, ##ECC695 50%, #FFFFFF 50%);
 }
+
 
 /* Definición de la animación */
 @keyframes fadeIn {
@@ -70,3 +72,4 @@ body {
     transform: translateY(0);
     }
 }
+

@@ -1,11 +1,12 @@
-header {
+/* Ajustes generales */
+.titlePlan {
     display: flex;
     align-items: center;
     text-align: center;
     flex-direction: column;
 }
 
-header h1, h3 {
+.titlePlan h1, h3 {
     color: var(--textColorOne);
     -webkit-text-stroke: 0.5px black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
@@ -16,7 +17,7 @@ header h1, h3 {
 }
 
 .containerMembership {
-    background: var(--bgMembership);
+    background: var(--colorBackground_us);
     margin: 10px;
     border-radius: 10px;
     display: flex;
@@ -25,112 +26,42 @@ header h1, h3 {
     text-align: center;
     height: 100%;
     padding: 20px;
+    box-shadow: 1px 5px 50px 1px rgba(0, 0, 0, 0.2);
 }
 
 .membershipCard {
     margin: 5px;
     flex: 1;
     border-radius: 8px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .basico h2, .maestro h2, .gourmet h2 {
     color: var(--textColorBold);
-    -webkit-text-stroke: 0.3px rgb(255, 255, 255);
+    -webkit-text-stroke: 0.2px rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
-.basico {
+.basico, .gourmet, .maestro {
     background: #E8BF8E;
-}
-
-.gourmet {
-    background-color: #956845;
-}
-
-.maestro {
-    background: var(--membershipMaster);
     position: relative;
     overflow: hidden;
-    order: 3;
-}
-
-.maestro::before {
-    content: "";
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    width: 180px;
-    height: 180px;
-    background-image: url("../../assets/planMaestro.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -50%);
-    /* opacity: 0.25; */
-    z-index: 0;
-}
-
-.maestro h2, .membershipDescription, .membershipDays {
-    position: relative;
-    z-index: 1;
-}
-
-.membershipBenefits {
-    background-color: #BA8C66;
-    margin: 10px;
-    border-radius: 4px;
-    border: 1px solid #806147;
-    padding: 5px;
-    font-size: 16px;
-    text-align: left;
-    padding-left: 10px;
-    color: var(--textColorOne);
-
-    box-shadow:
-        inset 10px 10px 20px rgba(80, 50, 30, 0.35),
-        inset -10px 10px 20px rgba(230, 190, 155, 0.35);
+    padding-top: 80px;
 }
 
 .membershipDescription {
-    text-align: center;
-    font-size: 13px;
-    color: black;
-    margin: 5px;
+    font-size: 0.8rem;
+    margin-top: -20px;
 }
 
-.basico .membershipPrice {
-    background: #8B5E3C;
-    width: 50%;
-    justify-self: center;
+.membershipBenefits {
+    text-align: left;
+    padding: 20px;
+    font-size: 0.9rem;
+    background-color: #BA8C66;
+    margin: 10px;
     border-radius: 6px;
-    border: 1px solid black;
-    font-size: 1.1rem;
-    color:var(--textColorOne);
-    padding: 5px;
-}
-
-.gourmet .membershipPrice {
-    background: #5E2B05;
-    width: 50%;
-    justify-self: center;
-    border-radius: 6px;
-    border: 1px solid black;
-    font-size: 1.1rem;
-    color: var(--textColorOne);
-    padding: 5px;
-}
-
-.maestro .membershipPrice {
-    background: #D1AA36;
-    width: 50%;
-    justify-self: center;
-    border-radius: 6px;
-    border: 1px solid black;
-    font-size: 1.1rem;
-    color: var(--textColorOne);
-    padding: 5px;
 }
 
 .buyButton {
@@ -143,36 +74,120 @@ header h1, h3 {
     cursor: pointer;
 }
 
+.line{
+    border: none;
+    height: 1px;
+    background: #b1835d;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.priceInfo .membershipPrice {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+.priceInfo .otherInfo {
+    font-size: 0.7rem;
+    font-weight: 450;
+}
+
 .buyButton:hover {
     background: var(--colorbuttonHover);
 }
 
+.maestro h5, .gourmet h5 {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-bottom: -6px;
+    font-weight: 450;
+}
+
+.maestro h6, .gourmet h6 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-top: -5px;
+    color: rgb(80, 79, 79);
+}
+
+/* Ajustes para el plan basico (independientes) */
+.basico::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-image: url("../../assets/PlanBasico.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX( -50%);
+    z-index: 1;
+}
+
 .basico .buyButton  {
-    background: #D9D9D9;
+    background: #C49A6C;
+    color: #fff;
+    border: 1px solid #8B6848;
+    box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+}
+
+/* Ajustes del plan Gourmet (independientes) */
+.gourmet::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-image: url("../../assets/PlanGourmet.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX( -50%);
+    z-index: 1;
 }
 
 
+/* Ajustes del plan Maestro (independientes) */
+.maestro::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-image: url("../../assets/planMaestro.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX( -50%);
+    z-index: 1;
+}
+
+/* Tablet */
 @media (min-width: 768px) {
     .containerMembership {
-        align-items: center;
+        display: flex;
+        flex-direction: row;
     }
 
     .membershipCard {
-        width: 80%;
+        width: 75%;
     }
 
     .membershipCard h2 {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
 
     .membershipDescription {
-        font-size: 1rem;
+        font-size: 0.82rem;
         width: 80%;
         justify-self: center;
-    }
-
-    .membershipDays {
-        font-size: 1.1rem;
     }
 
     .membershipBenefits {
@@ -180,120 +195,31 @@ header h1, h3 {
         justify-self: center;
     }
 
-    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
-        width: 30%;
-    }
-
     .buyButton{
         width: 80%;
+    }
+
+    .maestro h5, .gourmet h5 {
+        text-align: left;
+        margin-left: 5px;
     }
 }
 
 @media (min-width: 1024px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header h3 {
-        font-size: 1.7rem;
-    }
-
-    .containerMembership {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-    }
-
-    .membershipCard {
-        flex: 1;
-        padding-bottom: 20px;
-    }
-
-    .basico{
-        order: 1;
-        flex: none;
-        width: 30%;
-        height: 650px !important;
-    }
-    
-    .basico .membershipDescription {
-        font-size: 0.8rem;
-    }
-
-    .gourmet {
-        order: 3;
-        flex: none;
-        width: 30%;
-        height: 650px !important;
-    }
-
-    .gourmet .buyButton{
-        margin-top: 70px;
-    }
-
-    .maestro {
-        order: 2;
-    }
-
-    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
-        width: 50%;
+    .maestro h5, .gourmet h5 {
+        text-align: left;
+        margin-left: 10px;
     }
 }
 
 @media (min-width: 1025px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header h3 {
-        font-size: 1.7rem;
-    }
-
     .containerMembership {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-        width: 80%;
-        justify-self: center;
-        margin-bottom: 50px;
+        flex: none;
     }
 
     .membershipCard {
-        flex: 1;
-        width: 80%;
-        padding-bottom: 20px;
-    }
-
-    .basico{
-        order: 1;
         flex: none;
-        width: 20%;
-        height: 650px !important;
-    }
-    
-    .basico .membershipDescription {
-        font-size: 0.8rem;
-    }
-
-    .gourmet {
-        order: 3;
-        flex: none;
-        width: 20%;
-        height: 650px !important;
-    }
-
-    .gourmet .buyButton{
-        margin-top: 70px;
-    }
-
-    .maestro {
-        order: 2;
-        order: 3;
-        flex: none;
-        width: 20%;
-    }
-
-    .basico .membershipPrice, .gourmet .membershipPrice, .maestro .membershipPrice {
-        width: 50%;
+        width: 300px;
+        
     }
 }

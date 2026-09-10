@@ -99,33 +99,36 @@ input:hover{
     left: 16px;
     top: 0;
     transform: translateY(-50%);
-    font-size: 13px;
+    font-size: 0.8rem;
+    line-height: 1;
     color: var(--textColorTwo);
     pointer-events: none;
-    /* background-color: #FFFFFF; */
-    padding: 0 4px;
+    background-image: linear-gradient(to bottom, transparent 50%, #ffffff 50%);
+    padding: 0 6px;
     z-index: 2;
     white-space: nowrap;
 }
 
-.inputsGroup::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 0px;
-    transform: translateY(-1%);
-    width: fit-content;
-    min-width: 185px;
-    padding-right: 15px;
-    height: 3px;
-    background-color: #ffffff;
-    z-index: 1;
+.rowsPrefix > div:first-child label {
+    left: 8px;
+    font-size: 0.8rem;
+}
+
+.rowsPrefix > div:last-child label {
+    left: 4px;
+    font-size: 0.65rem;
+    border-radius: 8px;
+}
+
+.passwordConfirm > div:last-child label{
+    left: 6px;
+    font-size: 0.7rem;
+    border-radius: 8px;
 }
 
 .required{
     color: rgb(219, 3, 3);
 }
-
 
 /* Buttons form */
 .buttonsCode{

@@ -55,6 +55,11 @@ a:hover{
     width: 100%;
 }
 
+.Register i, .Login i {
+    font-size: 1.3rem;
+}
+
+
 .Login, .Register{
     background-color: transparent;
     padding: 8px 16px;
@@ -217,12 +222,14 @@ a:hover{
 /* Media Query (Tablet) */
 @media(min-width: 768px) and (max-width: 1023px){
     .NavBar_invited{
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 10px 20px;
+        font-size: 2px;
     }
 
-    .link{
+    .links{
         flex-direction: row;
         justify-content: center;
         gap: 1rem;
@@ -256,6 +263,17 @@ a:hover{
         width: 45%;
         max-width: none;
     }
+
+    .actionsButtons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Register, .Login {
+        height: 40px;
+        border-radius: 8px;
+    }
+
 }
 
 

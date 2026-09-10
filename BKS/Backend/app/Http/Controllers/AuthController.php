@@ -126,14 +126,16 @@ class AuthController extends Controller
 
             // Trae los campos del REACT - usuario_Id del localStorage 
             $usuario_id = $request->usuario_id;
+            $currentPassword = $request->currentPassword;
             $newPassword = $request->newPassword;
             $confirmPassword = $request->confirmPassword;
 
-            if(!$usuario_id || !$newPassword || !$confirmPassword){
+            if(!$usuario_id || !$currentPassword || !$newPassword || !$confirmPassword){
                 return response()->json([
                     'mensaje'=>"Todos los campos son obligatorios"
                 ], 422);
             }
+            // Igualda de contraseña
             if($newPassword !== $confirmPassword){
                 return response()->json([
                     'mensaje'=>"Las contraseñas no coinciden"
@@ -149,6 +151,12 @@ class AuthController extends Controller
                 ], 404);
             }
 
+            if(!Hash::check($currentPassword, $usuario->contrasena)) {
+                return response()->json([
+                    'mensaje' => 'La contraseña actual es incorrecta'
+                ], 422);
+            }
+
             // Actualizamos la contraseña del usuario
             DB::table('users')
                 ->where('id', $usuario_id)
@@ -159,6 +167,7 @@ class AuthController extends Controller
             return response()->json([
                 'mensaje'=>"Contraseña cambiada correctamente"
             ]);
+
         } catch (\Exception $e){
             return response()->json([
                 'mensaje'=>"Error interno del servidor"

@@ -46,15 +46,20 @@ export default function Principal()  {
 
                     {/* Botones de inicio de sesion o registro */}
                     <div className={styles.actionsButtons} >
-                        <button className={styles.Login}
-                            onClick={buttonLogin}
-                            disabled={loading}>Iniciar sesión
-                        </button>
-
                         <button className={styles.Register}
                             onClick={buttonRegister}
-                            disabled={loading}>Crear cuenta
+                            disabled={loading}>
+                                <i className={`bx bx-user-plus ${styles.icon}`} />
+                                Crear cuenta
                         </button>
+
+                        <button className={styles.Login}
+                            onClick={buttonLogin}
+                            disabled={loading}>
+                                <i className="bx bx-arrow-in-right-circle-half" />
+                                Iniciar sesión
+                        </button>
+
                     </div>
                 </nav>
 

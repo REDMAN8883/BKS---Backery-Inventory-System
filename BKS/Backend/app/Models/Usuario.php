@@ -13,20 +13,27 @@ class Usuario extends Model
     protected $fillable = [
         'nombres',
         'apellidos',
-        'id_Document',
         'numero_Documento',
+        'prefijo',
         'numero_Celular',
         'contrasena',
         'correo_Empresarial',
         'correo_Personal',
         'imagen_Usuario',
+        'barrio',
+        'ciudad',
+        'direccion',
+        'codigo_Postal',
+        'indicaciones_Adicionales',
+
         'correo_Verificado',
-        'prefijo',
         'acepta_terminos',
         'fecha_aceptacion_terminos',
         'confirma_mayoria_edad',
         'fecha_confirmacion_edad',
         'activo',
+
+        'id_Document',
         'id_Rol',
     ];
     public $timestamps = false;

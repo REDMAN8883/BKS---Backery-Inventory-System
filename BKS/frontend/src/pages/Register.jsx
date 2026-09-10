@@ -182,7 +182,7 @@ return(
                                     placeholder="Ej. Juan"
                                     required 
                                 />
-                                <label htmlFor="">Nombres <span className={styles.required}>*</span></label>
+                                <label className={styles.labelName}>Nombres <span className={styles.required}>*</span></label>
                             </div>
 
                             <div className={styles.inputsGroup}>
@@ -208,15 +208,16 @@ return(
                                         className={styles.prefix}
                                         onClick={() => setShowCountries(!showCountries)}
                                     >
-                                        {/* <span>{getFlagEmoji(country)}</span> */}
                                         {flags[country] && (() =>{
                                             const Flag = flags[country];
 
-                                            return <Flag className={styles.flags} />
+                                            return (
+                                                    <>
+                                                        <Flag className={styles.flags} />
+                                                        <span>+{getCountryCallingCode(country)}</span>
+                                                    </>
+                                                )
                                         })()}
-
-                                        {/* <span>+{getCountryCallingCode(country)}</span> */}
-                                        {/* <span>▼</span> */}
                                     </button>
 
                                     {showCountries && (
@@ -238,12 +239,14 @@ return(
                                                     {flags[c] && (() => {
                                                         const Flag = flags[c];
 
-                                                        return <Flag className={styles.flags} />
+                                                        return (
+                                                                <>
+                                                                    <span>+{getCountryCallingCode(c)}</span>
+                                                                </>
+                                                            )
                                                     }) ()}
-                                                    {/* <span>+{getCountryCallingCode}</span> */}
                                                 </button>
                                             ))}
-
                                         </div>
                                     )}
 
@@ -273,7 +276,6 @@ return(
                                         Número celular <span className={styles.required}>*</span>
                                     </label>
                                 </div>
-
                             </div>
 
                             <div className={styles.inputsGroup}>
@@ -308,7 +310,7 @@ return(
                                     placeholder="Ej. 123456789"
                                     required
                                 />
-                                <label htmlFor="">Numero de documento <span className={styles.required}>*</span></label>
+                                <label>Numero de documento <span className={styles.required}>*</span></label>
                             </div>
 
                             <div className={styles.inputsGroup}>
@@ -341,24 +343,24 @@ return(
                                     <i className={showPass ? "bi bi-eye-slash" : "bi bi-eye"}></i>
                                 </span>
                             </div>
-
-                            <div className={styles.inputsGroup}>
-                                {/* Confirmation Password */}
-                                <input 
-                                    type={showPass ? "text" : "password"}
-                                    name="contrasenaConfirmacion"
-                                    value={formData.contrasenaConfirmacion}
-                                    className={styles.form_control_custom}
-                                    placeholder="Repite tu contraseña"
-                                    onChange={formRegister}
-                                    required
-                                />
-                                <label htmlFor="">Confirmacion de contraseña <span className={styles.required}>*</span></label>
-                                <span className={styles.toggle} onClick={() => setShowPass(!showPass)}>
-                                    <i className={showPass ? "bi bi-eye-slash" : "bi bi-eye"}></i>
-                                </span>
+                            <div className={styles.passwordConfirm}>
+                                <div className={styles.inputsGroup} id="passwordConfirm">
+                                    {/* Confirmation Password */}
+                                    <input 
+                                        type={showPass ? "text" : "password"}
+                                        name="contrasenaConfirmacion"
+                                        value={formData.contrasenaConfirmacion}
+                                        className={styles.form_control_custom}
+                                        placeholder="Repite tu contraseña"
+                                        onChange={formRegister}
+                                        required
+                                    />
+                                    <label htmlFor="">Confirmacion de contraseña <span className={styles.required}>*</span></label>
+                                    <span className={styles.toggle} onClick={() => setShowPass(!showPass)}>
+                                        <i className={showPass ? "bi bi-eye-slash" : "bi bi-eye"}></i>
+                                    </span>
+                                </div>
                             </div>
-
                         </div>
 
                         <div className={styles.helps}>
@@ -417,13 +419,9 @@ return(
                         <Link to="/login" className={styles.accountNew}>
                             ¿Ya tienes una cuenta? <span className={styles.underlined}>Inicia sesión</span>
                         </Link>
-
                     </form>
-
                 </div>
-
             </div>
-
         </div>
     </>
 )

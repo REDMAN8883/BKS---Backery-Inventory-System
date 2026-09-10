@@ -27,7 +27,7 @@ export default function PanelClient(){
 
     return (
         <>  
-            <LoadingOverlay visible={loading} text="Preparando tu mesa..."/>
+            <LoadingOverlay visible={loading} text="Horneando tu membresía ideal..."/>
             <div className={styles.pageWrapper}>
                 <div className={styles.backgroundSectionOne} >
                     {/* Tarjeta y buscador unificados */}
@@ -41,7 +41,7 @@ export default function PanelClient(){
                                     placeholder='Buscar producto...' 
                                     className={styles.searchInput} 
                                 />
-                                <span className={styles.searchIcon}>🔍</span>
+                                <span className={styles.searchIcon}><i className="bx bx-search" /></span>
                             </div>
 
                             <div className={styles.divider}></div>
@@ -67,7 +67,7 @@ export default function PanelClient(){
                             <p className={styles.heroSubtitle}>Masa madre, harinas de origen y manos que conocen el tiempo. Cada pieza, una historia</p>
 
                             <div className={styles.heroButtons}>
-                                <a className={styles.buttonPrimary} href="#catalog">Ir al catálgo →</a>
+                                <a className={styles.buttonPrimary} href="#catalog">Ir al catálgo<i class="bx bx-arrow-right-stroke" /></a>
                                 <button className={styles.buttonSecond} onClick={subscriptions}>👀 Ver Suscripciones</button>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ export default function PanelClient(){
                 {/* Catalogo */}
                 <section className={styles.catalogSection}>
                     <h2 className={styles.catalogTitle} id="catalog">Catálago de productos</h2>
-                    <button className={styles.car}>Carrito</button>
+                    <button className={styles.car}><i class="bx bx-shopping-bag" /> Compras</button>
 
                     {/* Mapeo del catalogo */}
                     {/* Falta insertar productos para realizarlo */}

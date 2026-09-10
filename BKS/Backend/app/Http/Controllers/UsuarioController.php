@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
     // Listar usuarios
-    public function index()
+    public function index(Request $request)
     {
-        $usuarios = Usuario::all();
-        return response()->json($usuarios);
+        $user = $request->attributes->get('user');
+
+        $usuario = Usuario::with('rol')->find($user->id);
+
+        if (!$usuario) {
+            return response()->json([
+                'message' => 'Usuario no encontrado'
+            ], 404);
+        }
+
+        return response()->json($usuario);
     }
 
     // Crear usuario
@@ -74,21 +83,46 @@ class UsuarioController extends Controller
     // Actualizar usuario
     public function update(Request $request, string $id)
     {
-        $usuarios = Usuario::find($id);
+        $usuario = Usuario::find($id);
 
-        if(!$usuarios){
-            return response()->json(['message' => 'Usuario no encontrado'], 404);
+        if(!$usuario){
+            return response()->json([
+                'message' => 'Usuario no encontrado'
+            ], 404);
         }
 
-        $data = $request->all();
-        //Encriptamos la contraseña
-        $data['contrasena'] = Hash::make($request->contrasena);
+        $data = $request->only([
+            'nombres',
+            'apellidos',
+            'numero_Documento',
+            'prefijo',
+            'numero_Celular',
+            'correo_Empresarial',
+            'correo_Personal',
+            'barrio',
+            'ciudad',
+            'direccion',
+            'codigo_Postal',
+            'indicaciones_Adicionales',
+            'id_Document',
+        ]);
 
-        $usuarios = Usuario::create($data);
+        // Guardamos la imagen
+        if ($request->hasFile('imagen_Usuario')){
+            $ruta = $request->file('imagen_Usuario')
+                ->store('profile_Image', 'public');
+
+            $data['imagen_Usuario'] = $ruta;
+        }
+
+        $usuario->update($data);
+
+        $usuario->load('rol');
+        // $usuario->load(['rol', 'membresia']);
 
         return response()->json([
             'message' => 'Usuario actualizado correctamente',
-            'data' => $usuarios
+            'data' => $usuario
         ]);
     }
 

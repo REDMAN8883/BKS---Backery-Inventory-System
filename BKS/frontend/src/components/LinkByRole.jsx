@@ -7,11 +7,11 @@ const linksPorRol = {
         { path: "/login", label: "Login" },
     ],
     cliente: [
-        { path: "/cliente/inicio", label: "Inicio" },
+        { path: "/cliente", label: "Inicio" },
         { path: "/cliente/categorias", label: "Categorías" },
         { path: "/cliente/recetas", label: "Recetas" },
         { path: "/cliente/pedidos", label: "Pedidos" },
-        { path: "/cliente/perfil", label: "Perfil" },
+        { path: "/cliente/profile", label: "Perfil" },
         { path: "/login", label: "cerrar" },
     ],
 };
